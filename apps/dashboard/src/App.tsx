@@ -1,14 +1,10 @@
-import { isBlank } from '@cyca-ui/chakra';
+import { createBrowserRouter, RouterProvider } from 'react-router';
+import routes from '@/routes';
 
-const App = () => {
-  return (
-    <>
-      <p>undefined isBlank - {isBlank(undefined) ? 'true' : 'false'}</p>
-      <p>false isBlank - {isBlank(false) ? 'true' : 'false'}</p>
-      <p>true isBlank - {isBlank(true) ? 'true' : 'false'}</p>
-      <p>Empty object isBlank - {isBlank({}) ? 'true' : 'false'}</p>
-    </>
-  );
-};
+const router = createBrowserRouter(routes);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
 
 export default App;
